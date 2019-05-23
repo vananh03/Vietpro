@@ -1,0 +1,448 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Bootstrap 3 Project</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<style>
+*{
+	margin:0;
+	padding:0;}
+body{
+	font-family:arial;
+	font-size:14px;
+	color:#333;}
+#header{
+	background:#FF9600;}
+#logo, #search, #cart{
+	height:98px;}
+#logo h1{
+	margin:0;}
+#search input{
+	float:left;
+	margin-top:30px;}	
+#search input[type=text]{
+	width:330px;
+	height:35px;
+	border:1px solid #FFF;
+	background:transparent;
+	color:#FFF;
+	padding-left:15px;
+	font-size:12px;}
+#search input[type=submit]{
+	height:35px;
+	background:#FFF;
+	padding:0 15px;
+	border:none;
+	font-size:12px;
+	color:#FF9600;}	
+#cart{
+	background:url(images/cart.png) no-repeat;
+	line-height:98px;
+	font-weight:bold;
+	color:#FFF;}
+#cart a{
+	color:#F00;
+	margin-left:60px;}
+#body{
+	margin-top:15px;}
+#menu{
+	background:#FBFBFB;
+	border:1px solid #DDD;}	
+#menu ul li{
+	list-style:none;
+	height:40px;
+	line-height:40px;
+	padding-left:15px;
+	border-bottom:1px solid #DDD;}
+#menu ul li a{
+	color:#666;}	
+#menu ul li:first-child{
+	background:#F5F5F5;
+	text-transform:uppercase;}
+#menu ul li:last-child{
+	border:none;}	
+.banner-l-item{
+	margin-top:15px;}	
+#banner-t img{
+	margin-top:15px;}
+.products{
+	overflow:hidden;
+	margin-top:15px;}		
+.products h3{
+	font-size:18px;
+	color:#FF9600;
+	text-transform:uppercase;
+	margin-bottom:15px;}
+.product{
+	border:1px solid #DDD;
+	padding:15px 0px;
+	position:relative;}	
+.product img{
+	margin-bottom:15px;}	
+.price{
+	font-weight:bold;
+	color:#D60000;}	
+.marsk{
+	position:absolute;
+	width:100%;
+	height:100%;
+	background:#000;
+	top:0;
+	left:0;
+	opacity:0.75;}
+.more{
+	color:#FFF;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-left:-37px;}	
+.more, .marsk{
+	display:none;}	
+.product:hover .more{
+	display:block;}	
+.product:hover .marsk{
+	display:block;}	
+#footer-t{
+	background:#FF9600;
+	padding:30px 0;
+	margin-top:15px;}
+.logo{
+	height:98px;
+	background:url(images/logo.png) no-repeat center;}
+.content-f{
+	color:#FFF;
+	text-align:justify;}
+.content-f h3{
+	font-size:18px;
+	text-transform:capitalize;}	
+#footer-b{
+	background:#FF6700;
+	position:relative;}
+.footer-b-item p{
+	height:100px;
+	line-height:100px;
+	color:#FFF;
+	font-size:12px;}
+#scroll{
+	position:absolute;
+	top:0;
+	right:0;}	
+#logo button{
+	background:#FFF;
+	margin-top:30px;}
+#logo button span{
+	background:#FF9600;}
+.navbar-collapse{
+	padding:0;}							
+@media (max-width:992px){
+#search, #cart{
+	display:none;}
+}	
+@media (min-width:992px){
+.footer-b-item:last-child{
+	text-align:right;}	
+}													
+</style>
+</head>
+<body>
+
+<div id="header">
+	<div class="container">
+    	<div class="row">
+        	<div id="logo" class="col-md-3 col-sm-12 col-xs-12 text-center">
+            	<h1><a href="#"><img src="images/logo.png"></a>
+                	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </h1>
+            </div>
+            <div id="search" class="col-md-7 col-sm-12 col-xs-12">
+            	<input type="text" name="search" value="Nhập từ khóa tìm kiếm">
+                <input type="submit" name="submit" value="Tìm kiếm">
+            </div>
+            <div id="cart" class="col-md-2 col-sm-12 col-xs-12">
+            	Giỏ hàng <a href="#">6</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="body">
+	<div class="container">
+    	<div class="row">
+        	<div id="sidebar" class="col-md-3 col-sm-12 col-xs-12">
+            	<div id="menu" class="collapse navbar-collapse">
+                	<ul>
+                    	<li>danh mục sản phẩm</li>
+                        <li><a href="#">iPhone</a></li>
+                        <li><a href="#">Samsung</a></li>
+                        <li><a href="#">Sony</a></li>
+                        <li><a href="#">HTC</a></li>
+                        <li><a href="#">LG</a></li>
+                        <li><a href="#">OPPO</a></li>
+                        <li><a href="#">Blackberry</a></li>
+                    </ul>
+                </div>
+                
+                <div id="banner-l">
+                	<div class="banner-l-item">
+                    	<a href="#"><img class="img-responsive" src="images/banner-l-1.png"></a>
+                    </div>
+                    <div class="banner-l-item">
+                    	<a href="#"><img class="img-responsive" src="images/banner-l-2.png"></a>
+                    </div>
+                    <div class="banner-l-item">
+                    	<a href="#"><img class="img-responsive" src="images/banner-l-3.png"></a>
+                    </div>
+                    <div class="banner-l-item">
+                    	<a href="#"><img class="img-responsive" src="images/banner-l-4.png"></a>
+                    </div>
+                    <div class="banner-l-item">
+                    	<a href="#"><img class="img-responsive" src="images/banner-l-5.png"></a>
+                    </div>
+                    <div class="banner-l-item">
+                    	<a href="#"><img class="img-responsive" src="images/banner-l-6.png"></a>
+                    </div>
+                    <div class="banner-l-item">
+                    	<a href="#"><img class="img-responsive" src="images/banner-l-7.png"></a>
+                    </div>
+                </div>
+            </div>
+            <div id="main" class="col-md-9 col-sm-12 col-xs-12">
+            <!--	Main	-->
+            	<div id="slider">
+                	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+                      <!-- Indicators -->
+                      <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                      </ol>
+                    
+                      <!-- Wrapper for slides -->
+                      <div class="carousel-inner">
+                        <div class="item active">
+                          <img src="images/slide-1.png" alt="Vietpro Academy">
+                        </div>
+                    
+                        <div class="item">
+                          <img src="images/slide-2.png" alt="Vietpro Academy">
+                        </div>
+                    
+                        <div class="item">
+                          <img src="images/slide-3.png" alt="Vietpro Academy">
+                        </div>
+                      </div>
+                    
+                      <!-- Left and right controls -->
+                      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </div>
+                </div>
+                
+                <div id="banner-t" class="row">			
+                	<div class="col-md-6 col-sm-12 col-xs-12">
+                    	<a href="#"><img class="img-responsive" src="images/banner-t-1.png"></a>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                    	<a href="#"><img class="img-responsive" src="images/banner-t-2.png"></a>
+                    </div>
+                </div>           
+                
+				<div class="products">
+                	<h3>sản phẩm nổi bật</h3>
+                	<div class="product col-md-3 col-sm-6 col-xs-12 text-center">
+                    	<img src="images/product-1.png">
+                        <p>iPhone 6S Plus 64G Quốc tế</p>
+                        <p class="price">10.000.000</p>
+                        <div class="marsk"></div>
+                        <a class="more" href="#">Xem chi tiết</a>
+                    </div>
+                    <div class="product col-md-3 col-sm-6 col-xs-12 text-center">
+                    	<img src="images/product-2.png">
+                        <p>iPhone 6S Plus 64G Quốc tế</p>
+                        <p class="price">10.000.000</p>
+                        <div class="marsk"></div>
+                        <a class="more" href="#">Xem chi tiết</a>
+                    </div>
+                    <div class="product col-md-3 col-sm-6 col-xs-12 text-center">
+                    	<img src="images/product-3.png">
+                        <p>iPhone 6S Plus 64G Quốc tế</p>
+                        <p class="price">10.000.000</p>
+                        <div class="marsk"></div>
+                        <a class="more" href="#">Xem chi tiết</a>
+                    </div>
+                    <div class="product col-md-3 col-sm-6 col-xs-12 text-center">
+                    	<img src="images/product-4.png">
+                        <p>iPhone 6S Plus 64G Quốc tế</p>
+                        <p class="price">10.000.000</p>
+                        <div class="marsk"></div>
+                        <a class="more" href="#">Xem chi tiết</a>
+                    </div>
+                    <div class="product col-md-3 col-sm-6 col-xs-12 text-center">
+                    	<img src="images/product-1.png">
+                        <p>iPhone 6S Plus 64G Quốc tế</p>
+                        <p class="price">10.000.000</p>
+                        <div class="marsk"></div>
+                        <a class="more" href="#">Xem chi tiết</a>
+                    </div>
+                    <div class="product col-md-3 col-sm-6 col-xs-12 text-center">
+                    	<img src="images/product-2.png">
+                        <p>iPhone 6S Plus 64G Quốc tế</p>
+                        <p class="price">10.000.000</p>
+                        <div class="marsk"></div>
+                        <a class="more" href="#">Xem chi tiết</a>
+                    </div>
+                    <div class="product col-md-3 col-sm-6 col-xs-12 text-center">
+                    	<img src="images/product-3.png">
+                        <p>iPhone 6S Plus 64G Quốc tế</p>
+                        <p class="price">10.000.000</p>
+                        <div class="marsk"></div>
+                        <a class="more" href="#">Xem chi tiết</a>
+                    </div>
+                    <div class="product col-md-3 col-sm-6 col-xs-12 text-center">
+                    	<img src="images/product-4.png">
+                        <p>iPhone 6S Plus 64G Quốc tế</p>
+                        <p class="price">10.000.000</p>
+                        <div class="marsk"></div>
+                        <a class="more" href="#">Xem chi tiết</a>
+                    </div>
+                </div>
+                
+                <div class="products">
+                	<h3>sản phẩm mới</h3>
+                	<div class="product col-md-3 col-sm-6 col-xs-12 text-center">
+                    	<img src="images/product-1.png">
+                        <p>iPhone 6S Plus 64G Quốc tế</p>
+                        <p class="price">10.000.000</p>
+                        <div class="marsk"></div>
+                        <a class="more" href="#">Xem chi tiết</a>
+                    </div>
+                    <div class="product col-md-3 col-sm-6 col-xs-12 text-center">
+                    	<img src="images/product-2.png">
+                        <p>iPhone 6S Plus 64G Quốc tế</p>
+                        <p class="price">10.000.000</p>
+                        <div class="marsk"></div>
+                        <a class="more" href="#">Xem chi tiết</a>
+                    </div>
+                    <div class="product col-md-3 col-sm-6 col-xs-12 text-center">
+                    	<img src="images/product-3.png">
+                        <p>iPhone 6S Plus 64G Quốc tế</p>
+                        <p class="price">10.000.000</p>
+                        <div class="marsk"></div>
+                        <a class="more" href="#">Xem chi tiết</a>
+                    </div>
+                    <div class="product col-md-3 col-sm-6 col-xs-12 text-center">
+                    	<img src="images/product-4.png">
+                        <p>iPhone 6S Plus 64G Quốc tế</p>
+                        <p class="price">10.000.000</p>
+                        <div class="marsk"></div>
+                        <a class="more" href="#">Xem chi tiết</a>
+                    </div>
+                    <div class="product col-md-3 col-sm-6 col-xs-12 text-center">
+                    	<img src="images/product-1.png">
+                        <p>iPhone 6S Plus 64G Quốc tế</p>
+                        <p class="price">10.000.000</p>
+                        <div class="marsk"></div>
+                        <a class="more" href="#">Xem chi tiết</a>
+                    </div>
+                    <div class="product col-md-3 col-sm-6 col-xs-12 text-center">
+                    	<img src="images/product-2.png">
+                        <p>iPhone 6S Plus 64G Quốc tế</p>
+                        <p class="price">10.000.000</p>
+                        <div class="marsk"></div>
+                        <a class="more" href="#">Xem chi tiết</a>
+                    </div>
+                    <div class="product col-md-3 col-sm-6 col-xs-12 text-center">
+                    	<img src="images/product-3.png">
+                        <p>iPhone 6S Plus 64G Quốc tế</p>
+                        <p class="price">10.000.000</p>
+                        <div class="marsk"></div>
+                        <a class="more" href="#">Xem chi tiết</a>
+                    </div>
+                    <div class="product col-md-3 col-sm-6 col-xs-12 text-center">
+                    	<img src="images/product-4.png">
+                        <p>iPhone 6S Plus 64G Quốc tế</p>
+                        <p class="price">10.000.000</p>
+                        <div class="marsk"></div>
+                        <a class="more" href="#">Xem chi tiết</a>
+                    </div>
+                </div>
+ 
+            <!--	End Main	-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="footer-t">
+	<div class="container">
+        <div class="row">
+            <div class="logo col-md-3 col-sm-12 col-xs-12"></div>
+            <div class="content-f col-md-3 col-sm-12 col-xs-12">
+            	<h3>about us</h3>
+                <p>
+                    Vietpro Academy thành lập năm 2009. 
+                    Chúng tôi đào tạo chuyên sâu trong 2 lĩnh 
+                    vực là Lập trình Website & Mobile nhằm 
+                    cung cấp cho thị trường CNTT Việt Nam 
+                    những lập trình viên thực sự chất lượng, 
+                    có khả năng làm việc độc lập, cũng như 
+                    Team Work ở mọi môi trường đòi hỏi sự 
+                    chuyên nghiệp cao.
+                </p>
+            </div>
+            <div class="content-f col-md-3 col-sm-12 col-xs-12">
+            	<h3>hotline</h3>
+                <p>Phone Sale: (+84) 0988 550 553</p>
+                <p>Email: sirtuanhoang@gmail.com</p>
+            </div>
+            <div class="content-f col-md-3 col-sm-12 col-xs-12">
+            	<h3>contact us</h3>
+                <p>
+                	Address 1: B8A Võ Văn Dũng - Hoàng Cầu
+Đống Đa - Hà Nội
+                </p>
+                <p>
+                	Address 2: Số 25 Ngõ 178/71 - Tây Sơn
+Đống Đa - Hà Nội
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="footer-b">
+	<div class="container">
+    	<div class="row">
+        	<div class="footer-b-item col-md-6 col-sm-12 col-xs-12">
+            	<p>Học viện Công nghệ Vietpro - www.vietpro.edu.vn</p>
+            </div>
+            <div class="footer-b-item col-md-6 col-sm-12 col-xs-12">
+            	<p>© 2017 Vietpro Academy. All Rights Reserved</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="scroll"><a href="#"><img src="images/scroll.png"></a></div>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
